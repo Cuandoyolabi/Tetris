@@ -55,7 +55,7 @@ var Page = {
     this.cvs.style.left = leftPos + 'px';
     this.cvs.style.top = topPos + 'px';
   },
-
+-------------------
   // performs the page setup
   Initialize: function () {
 
