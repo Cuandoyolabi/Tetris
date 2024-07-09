@@ -1,3 +1,4 @@
+// Configuracion Inicial de la pagina.
 let Pagina = {
     isSetup: false,
     body: document.getElementsByTagName('body')[0],
@@ -85,3 +86,42 @@ let Pagina = {
     }
 };
 
+//Definicion de objetos de Area. Y limites de unidades.
+function DrawAreaObj(Left, Top, Width, Height, DrawFunction){
+
+    //Limites de unidades.
+    this.leftBase = Left;
+    this.topBase = Top;
+    this.widthBase = Width;
+    this.heightBase = Height;
+
+    //Limites en pixeles.
+    this.left = 0;
+    this.top = 0;
+    this.W = 0;
+    this.H = 0;
+
+    //Bandera sucia.
+    this.isDirty = false;
+
+    //Recalculando limites y areas sucias cuando unitSize cambie.
+    this.calculateBounds = function(){
+        this.left = this.leftBase * Page.unitSize;
+        this.top = this.topBase * Page.unitSize;
+        this.W = this.widthBase * Page.unitSize;
+        this.H = this.heightBase * Page.unitSize;
+        this.isDirty = true;
+    };
+
+    //Dibujar la funcion tal como la pasa el destinatario.
+    this.Draw = DrawFunction;
+
+    //Empuja esta area adentro del Area arr.
+    Page.AreaArr.push(this);
+};
+
+
+Page.Game = new DrawAreaObj(0, 0, 10, 20, functon() {
+    
+    //Dandole unos pixeles de separcion.
+})
