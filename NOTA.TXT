@@ -125,7 +125,7 @@ function DrawAreaObj(Left, Top, Width, Height, DrawFunction) {
   // push this area into the area arr    
   Page.AreaArr.push(this);
 }
-
+------------------
 
 Page.Game = new DrawAreaObj(0, 0, 10, 20, function () {
 
